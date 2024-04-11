@@ -1,6 +1,6 @@
 import css from './Contact.module.css';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../../redux/contactsSlice';
+import { deleteContact } from '../../../redux/contactsOps';
 export default function Contact({ contact }) {
   const dispatch = useDispatch();
   const { id, name, number } = contact;
@@ -17,7 +17,7 @@ export default function Contact({ contact }) {
           <svg className={css['svg-icon']} width="24" height="24">
             <use href="img/icons.svg#icon-phone" />
           </svg>
-          <p>{number}</p>
+          <a href={`tel:${number}`}>{number}</a>
         </li>
       </ul>
       <button
