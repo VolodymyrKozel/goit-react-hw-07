@@ -26,7 +26,7 @@ export default function ContactList() {
         ))
       ) : (
         <li className={css['contact-item']}>
-          <p>No contacts found</p>
+          <p>No contacts yet</p>
         </li>
       )}
     </ul>

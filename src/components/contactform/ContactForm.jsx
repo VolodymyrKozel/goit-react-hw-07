@@ -11,9 +11,10 @@ const FeedbackSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   number: Yup.string()
-    /* .matches(/^[0-9\-\+]{9,15}$/, 'Phone number is not valid') */
-    .min(3, 'Too Short!')
-    .max(50, 'Too Long!')
+    .matches(
+      /^[+\0-9]{3,15}$/,
+      'Phone number is not valid, must be only digits'
+    )
     .required('Required'),
 });
 

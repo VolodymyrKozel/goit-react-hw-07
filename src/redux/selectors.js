@@ -12,3 +12,9 @@ export const selectVisibleContacts = createSelector(
     );
   }
 );
+export const seclectSortedContacts = createSelector(
+  [selectVisibleContacts],
+  contacts => {
+    return [...contacts].sort((a, b) => a.name.localeCompare(b.name));
+  }
+);
